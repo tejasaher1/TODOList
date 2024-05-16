@@ -1,0 +1,95 @@
+body{
+    background-color: aqua;
+ }
+ #headline{
+    border-bottom: 2px solid black;
+ }
+ 
+ 
+ .centerItem{
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;            
+ }
+ 
+ 
+ #headerDiv{
+    position: absolute;
+    height: auto;
+    width: auto;
+    left: 30%;
+    top: 15%;
+    /* background-color: red; */
+ }
+ 
+ 
+ #item{
+    margin: 5px;
+ }
+ 
+ 
+ ul{
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 0; 
+    font-size: 3vh;
+ }
+ 
+ 
+ li{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    /* top: 5vh; */
+    padding: 5px;
+    /* border: 1px solid black; */
+    margin-bottom: 10px;
+    border-radius: 10px;
+ }
+ 
+ 
+ li>input{
+    padding: 50px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 19%;
+ }
+ 
+ 
+ #mainText{
+    
+    position: relative;
+    left: 40px;
+ }
+ 
+ 
+ 
+ 
+ input[type="text"] {
+    width: 500px; /* Set desired width */
+    height: 30px; /* Set desired height */
+    padding: 5px; /* Add padding for better appearance */
+    font-size: 16px; /* Set font size */
+ }
+ 
+ 
+ #deleteIcon{
+    position: absolute;
+    left: 80%;
+    top: 23%;
+ }
+ 
+ 
+ #deleteIcon:hover{
+    cursor: pointer;
+ }
+ 
+ 
+ #listItem input:checked + label:before {
+    background: #0079bf;
+ } 
+ #listItem input:checked + label {
+    text-decoration: line-through;
+  }
+ 
