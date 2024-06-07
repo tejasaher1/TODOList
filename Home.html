@@ -10,30 +10,36 @@
 </head>
 <body>
 
-
-   <h1 id="headline"  class="centerItem"> TODO LIST </h1>
+   <div class="mainDiv">
+    <h1 id="headline"  class="centerItem"> TODO LIST </h1>
   
-   <div id="headerDiv" >
-       <i id="icon" class="fa-solid fa-list-ul fa-2xl" style="color: #03358c;"></i>
-       <input type="text" id="item" name="item" placeholder="typer here...">
-       <button id="button"> Add Item </button>
+    <div id="headerDiv" >
+        <!-- <i id="icon" class="fa-solid fa-list-ul fa-2xl" style="color: #03358c;"></i> -->
+        <i id="icon" class="fa-solid fa-clipboard-list  fa-2xl" style="color: #5d2bf3;"></i>
+        <input type="text" id="item" name="item" placeholder="typer here...">
 
+        <div class="date-container">
+            <input type="date" id="date-add" >
+            <label for="date-add" class="custom-date-label">📅</label>
+        </div>
 
-       <div id="total-tasks">Total tasks: <span id="tasks-counter">0</span></div>
+        <button id="button"> Add Item </button>
+ 
+ 
+        <div id="task-position">
+            <div class="total-tasks">Total tasks: <span id="tasks-counter">0</span></div>
+            <div class="total-tasks">Complete tasks: <span id="complete-task-counter">0</span></div>
+            <div class="total-tasks">Pending tasks: <span id="pending-tasks-counter">0</span></div>
+        </div>
 
-
-       <div id="listDiv">
-           <ul id="listItem">
-               
-               
-
-
-               
-           </ul>
-       </div>
-
-
-
+ 
+ 
+        <div id="listDiv">
+            <ul id="listItem">
+                
+            </ul>
+        </div> 
+    </div>
 
    </div>
 
@@ -43,3 +49,6 @@
    </script>
 </body>
 </html>
+
+
+
