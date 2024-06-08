@@ -9,6 +9,7 @@ window.onload = function () {
   loadListItems();
 };
 
+// Adding or rendering items in DOM structure-
 function renderUI(textObj) {
   var li = document.createElement("li");
   li.id = textObj.id;
@@ -20,7 +21,7 @@ function renderUI(textObj) {
               <label id="mainText" for="${textObj.id}"> ${
     textObj.text
   } </label>  
-              <i class="fa-solid fa-trash-can" style="color: #02225a;" id="deleteIcon" data-id="${
+              <i class="fa-solid fa-trash-can" style="color: #f001fe;" id="deleteIcon" data-id="${
                 textObj.id
               }"></i>`;
 
@@ -40,11 +41,12 @@ function loadListItems() {
     //Update count
     var newList = list.querySelectorAll("li");
     counter.textContent = newList.length;
-    let readCompleteCount = 0 , readPendingCount = 0;
+    let readCompleteCount = 0,
+      readPendingCount = 0;
     itemArray.forEach(function (textObj) {
-      if(textObj.isDone) {
+      if (textObj.isDone) {
         readCompleteCount++;
-      }else{
+      } else {
         readPendingCount++;
       }
     });
@@ -52,6 +54,8 @@ function loadListItems() {
     pendingTaskCount.textContent = readPendingCount;
   }
 }
+
+// Saving itemArray list in local storage using localStorage.setItem -
 function saveListItems() {
   var listItems = document.getElementById("listItem").innerHTML;
   localStorage.setItem("myListItems", JSON.stringify(itemArray));
@@ -60,7 +64,7 @@ function saveListItems() {
 
 // -------------------------------------------------------------------------------------------------------------
 // Delete
-
+// Here we take ID of the item from handleClick function and remove it from DOM and localStorage -
 function deleteItemFromList(taskid) {
   var RlistItem = document.getElementById(taskid);
   RlistItem.remove(); // Remove the list item from the DOM
@@ -134,18 +138,10 @@ function createTask(e) {
   }
 }
 // -------------------------------------------------------------------------------------------------------------
-//Comment
 
-// -------------------------------------------------------------------------------------------------------------
-//Toggle
+//Toggle the status of tasks that are clicked by user -
 
 function toggleTask(taskId) {
-  // var sortObj = itemArray.filter(function (item) {
-  //   return item.id === taskId;
-  // });
-  // sortObj[0].isDone = !sortObj[0].isDone; // sortObj is a array of obj so thats why sortObj[0].
-  // console.log(sortObj);
-  // saveListItems();
   let foundItem;
   itemArray.forEach(function (item) {
     if (item.id === taskId) {
@@ -184,13 +180,14 @@ text.addEventListener("keyup", createTask);
 clickButton.addEventListener("click", createTask);
 document.addEventListener("click", handleClickListener);
 
-/// Task to check All, complete and Pending tasks -
+// -------------------------------------------------------------------------------------------------------------
+
+/// Function to check All, complete and Pending tasks status -
 
 document.addEventListener("DOMContentLoaded", function () {
   const customSelect = document.querySelector(".custom-select");
   const selectedOption = document.querySelector(".selected-option");
   const selectOptions = document.querySelectorAll(".select-options li");
-  const hiddenSelect = document.getElementById("hidden-select");
 
   selectOptions.forEach((option) => {
     option.addEventListener("click", function () {

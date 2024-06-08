@@ -48,40 +48,6 @@ body {
   font-size: 18px;
 }
 
-/* .date-container {
-  position: relative;
-  display: inline-block;
-} */
-
-/* Hide the actual date input */
-/* #date-add {
-  position: absolute;
-  right: 31px;
-  width: 27px;
-  height: 30px;
-  opacity: 0;
-  z-index: 1;
-  cursor: pointer;
-} */
-
-/* Custom date picker button styled as a label */
-/* .custom-date-label {
-  position: relative;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  right: 30px;
-} */
-
-/* Optional: hover effect for the label */
-/* .custom-date-label:hover {
-  background-color: #081018;
-} */
-
 .calendar-icon {
   position: relative;
   left: 10%;
@@ -94,8 +60,13 @@ body {
   color: #f3f5f5;
   margin: 5px;
   padding: 3px;
-  right: 30px;
+  right: 5px;
   bottom: 2px;
+}
+
+#button:hover {
+  background-color: #f3f5f5;
+  color: #03000ab5;
 }
 
 #task-position {
@@ -150,7 +121,9 @@ li > input {
 }
 
 li:hover {
+  background-color: black;
   font-size: larger;
+  color: white;
 }
 
 #mainText {
@@ -159,10 +132,10 @@ li:hover {
 }
 
 input[type="text"] {
-  width: 500px; /* Set desired width */
-  height: 30px; /* Set desired height */
-  padding: 5px; /* Add padding for better appearance */
-  font-size: 16px; /* Set font size */
+  width: 500px;
+  height: 30px;
+  padding: 5px;
+  font-size: 16px;
 }
 
 #deleteIcon {
@@ -183,13 +156,6 @@ input[type="text"] {
   text-decoration: line-through;
 }
 
-
-
-
-
-
-
-
 .custom-select-container {
   position: absolute;
   display: flex;
@@ -209,7 +175,7 @@ input[type="text"] {
 .selected-option {
   padding: 5px;
   border: 1px solid black;
-  background-image: linear-gradient(50deg, #8BFC03, #bce37e);
+  background-image: linear-gradient(50deg, #8bfc03, #bce37e);
   text-align: center;
 }
 
@@ -234,7 +200,6 @@ input[type="text"] {
   left: 7px;
   top: 5px;
   justify-content: center;
-  
 }
 
 .select-options li:hover {
