@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-        crossorigin="anonymous"
-      />
-      <script
-        src="https://kit.fontawesome.com/0c608f6c6b.js"
-        crossorigin="anonymous"
-      ></script>
-      <link rel="stylesheet" href="style.css" />
-      <title>TODO List</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/0c608f6c6b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>TODO List</title>
   </head>
   <body>
-      <div class="mainDiv">
-        <h1 id="headline" class="centerItem">TODO LIST</h1>
+    <div class="mainDiv">
+      <h1 id="headline" class="centerItem">TODO LIST</h1>
 
-        <div id="headerDiv">
-          <i
-            id="icon"
-            class="fa-solid fa-clipboard-list fa-2xl"
-            style="color: #5d2bf3"
-          ></i>
+      <div id="headerDiv">
+        <i
+          id="icon"
+          class="fa-solid fa-clipboard-list fa-2xl"
+          style="color: #5d2bf3"
+        ></i>
 
-          <input type="text" id="item" name="item" placeholder="typer here..." />
-          <button id="button">Add Item</button>
+        <input type="text" id="item" name="item" placeholder="typer here..." />
+        <button id="button">Add Item</button>
 
-          <div id="task-position">
-            <div class="total-tasks">
-              Total tasks: <span id="tasks-counter">0</span>
-            </div>
-            <div class="total-tasks">
-              Complete tasks: <span id="complete-task-counter">0</span>
-            </div>
-            <div class="total-tasks">
-              Pending tasks: <span id="pending-tasks-counter">0</span>
-            </div>
+        <div id="task-position">
+          <div class="total-tasks">
+            Total tasks: <span id="tasks-counter">0</span>
           </div>
-
-          <div id="select-options" class="custom-select-container">
-            <div class="custom-select">
-              <div class="selected-option">All</div>
-              <ul class="select-options">
-                <li data-value="all">All</li>
-                <li data-value="complete">Complete</li>
-                <li data-value="pending">Pending</li>
-              </ul>
-            </div>
+          <div class="total-tasks">
+            Complete tasks: <span id="complete-task-counter">0</span>
           </div>
-
-          <div id="listDiv">
-            <ul id="listItem"></ul>
+          <div class="total-tasks">
+            Pending tasks: <span id="pending-tasks-counter">0</span>
           </div>
         </div>
-      </div>
 
-      <script type="text/javascript" src="index.js"></script>
+        <div id="select-options" class="custom-select-container">
+          <div class="custom-select">
+            <div class="selected-option">All</div>
+            <ul class="select-options">
+              <li data-value="all">All</li>
+              <li data-value="complete">Complete</li>
+              <li data-value="pending">Pending</li>
+            </ul>
+          </div>
+        </div>
+
+        <button id="allClear-btn">Clear All Task</button>
+
+        <div id="listDiv">
+          <ul id="listItem"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

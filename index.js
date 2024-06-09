@@ -2,6 +2,19 @@ let itemArray = [];
 let latestCount = 0;
 let arrayOfli = [];
 
+// Defingin -
+
+var clickButton = document.getElementById("button");
+var text = document.getElementById("item");
+var list = document.getElementById("listItem");
+var counter = document.getElementById("tasks-counter");
+var completeTaaskCount = document.getElementById("complete-task-counter");
+var pendingTaskCount = document.getElementById("pending-tasks-counter");
+
+const customSelect = document.querySelector(".custom-select");
+const selectedOption = document.querySelector(".selected-option");
+const selectOptions = document.querySelectorAll(".select-options li");
+
 // -------------------------------------------------------------------------------------------------------------
 //Storing list items in Local Storage
 
@@ -91,7 +104,6 @@ function deleteItemFromList(taskid) {
   }
 
   if (!element[0].isDone) {
-    console.log(element[0].isDone);
     pendingCount = parseInt(pendingTaskCount.textContent);
     pendingTaskCount.textContent = pendingCount - 1;
   } else {
@@ -104,12 +116,6 @@ function deleteItemFromList(taskid) {
 
 // -------------------------------------------------------------------------------------------------------------
 // Create
-var clickButton = document.getElementById("button");
-var text = document.getElementById("item");
-var list = document.getElementById("listItem");
-var counter = document.getElementById("tasks-counter");
-var completeTaaskCount = document.getElementById("complete-task-counter");
-var pendingTaskCount = document.getElementById("pending-tasks-counter");
 
 function createListAll(textObj) {
   renderUI(textObj);
@@ -185,10 +191,6 @@ document.addEventListener("click", handleClickListener);
 /// Function to check All, complete and Pending tasks status -
 
 document.addEventListener("DOMContentLoaded", function () {
-  const customSelect = document.querySelector(".custom-select");
-  const selectedOption = document.querySelector(".selected-option");
-  const selectOptions = document.querySelectorAll(".select-options li");
-
   selectOptions.forEach((option) => {
     option.addEventListener("click", function () {
       selectedOption.textContent = option.textContent;
@@ -224,4 +226,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+});
+
+// -------------------------------------------------------------------------------------------------------------
+/// Function to clear all tasks from list -
+
+let clearAll = document.getElementById("allClear-btn");
+
+clearAll.addEventListener("click", function () {
+  console.log("click all clear");
+  list.innerHTML = "";
+  itemArray = [];
+  counter.textContent = 0;
+  completeTaaskCount.textContent = 0;
+  pendingTaskCount.textContent = 0;
+  saveListItems();
 });
